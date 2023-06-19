@@ -11,4 +11,4 @@
 ![スクリーンショット (113)](https://github.com/Mondsichel/GeekTouchTyper/assets/112801340/3846dc51-f9db-4440-b03b-705fc82e1204)
 ![スクリーンショット (114)](https://github.com/Mondsichel/GeekTouchTyper/assets/112801340/8a2e9b64-0f20-472d-bbcb-f3b43b6b83b1)
 
-<img width="960" alt="play" src="https://github.com/Mondsichel/GeekTouchTyper/assets/112801340/9538f14f-528b-4c32-ba00-769073ce74a9">
+<img width="960" alt="play1" src="https://github.com/Mondsichel/GeekTouchTyper/assets/112801340/51b45802-bb08-4241-bddf-e2937c26de0e">
