@@ -1,32 +1,14 @@
-## TODO
-- gameのUIは果たしてどこまで作れるのか(あんま期待できない)
-- デプロイの仕方を勉強する
-- 視線検知のための勉強
+# Geek Touch Typer
 
-=======
-# 毎日の手順
- 
-1. ローカルのmainブランチで、最新のリモートリポジトリをpullする
-```bash
-git pull origin main
-```
+4人で共同開発したタイピングゲーム。
+2023年6月に開催されたサポーターズ主催の【技育CAMP】マンスリーハッカソン vol.4 にて優秀賞を受賞した。
 
-2. ローカルのmainブランチから、新しくブランチを作成する
-```bash
-git switch -c <ブランチ名>
-```
 
-3. 新しいブランチでファイルを更新した後、addしてcommitする
-```bash
-git add .
-git commit -m "<メッセージ>"
-```
+## 紹介
 
-4. リモートにpushする
-```bash
-git push origin <ブランチ名>
-```
+![スクリーンショット (111)](https://github.com/Mondsichel/GeekTouchTyper/assets/112801340/53125fb3-8005-431d-bdc8-35e9306a93db)
+![スクリーンショット (112)](https://github.com/Mondsichel/GeekTouchTyper/assets/112801340/38fd50fb-b57e-4f8c-8d24-ecfdc36fb735)
+![スクリーンショット (113)](https://github.com/Mondsichel/GeekTouchTyper/assets/112801340/3846dc51-f9db-4440-b03b-705fc82e1204)
+![スクリーンショット (114)](https://github.com/Mondsichel/GeekTouchTyper/assets/112801340/8a2e9b64-0f20-472d-bbcb-f3b43b6b83b1)
 
-5. Githubでpull requestを作成する
-
-終わり！
+<img width="960" alt="play" src="https://github.com/Mondsichel/GeekTouchTyper/assets/112801340/9538f14f-528b-4c32-ba00-769073ce74a9">
