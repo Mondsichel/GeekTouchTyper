@@ -2,8 +2,7 @@
 <!DOCTYPE html>
 <html lang="ja">
     <head>
-      <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta charset="utf-8">
         <title>test</title>
         <script src="https://code.jquery.com/jquery-3.5.1.min.js "></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
@@ -65,6 +64,25 @@
                     </div>
                 </div>
             </div>
+            <div id="loading">
+                <div class="sk-fading-circle">
+                    <div class="sk-circle1 sk-circle"></div>
+                    <div class="sk-circle2 sk-circle"></div>
+                    <div class="sk-circle3 sk-circle"></div>
+                    <div class="sk-circle4 sk-circle"></div>
+                    <div class="sk-circle5 sk-circle"></div>
+                    <div class="sk-circle6 sk-circle"></div>
+                    <div class="sk-circle7 sk-circle"></div>
+                    <div class="sk-circle8 sk-circle"></div>
+                    <div class="sk-circle9 sk-circle"></div>
+                    <div class="sk-circle10 sk-circle"></div>
+                    <div class="sk-circle11 sk-circle"></div>
+                    <div class="sk-circle12 sk-circle"></div>
+                </div>
+                <div class="text">
+                    <p>しばらくお待ちください</p>
+                </div>
+            </div>
             <footer>
                 <p>Produced by MML</p>
             </footer>
@@ -72,34 +90,34 @@
     </body>
     <script>
         function getCookie(name) {
-          var cookieValue = null;
-          if (document.cookie && document.cookie !== "") {
-            var cookies = document.cookie.split(";");
-            for (var i = 0; i < cookies.length; i++) {
-              var cookie = jQuery.trim(cookies[i]);
-              if (cookie.substring(0, name.length + 1) === name + "=") {
-                cookieValue = decodeURIComponent(
-                  cookie.substring(name.length + 1)
-                );
-                break;
-              }
+            var cookieValue = null;
+            if (document.cookie && document.cookie !== "") {
+                var cookies = document.cookie.split(";");
+                for (var i = 0; i < cookies.length; i++) {
+                    var cookie = jQuery.trim(cookies[i]);
+                    if (cookie.substring(0, name.length + 1) === name + "=") {
+                        cookieValue = decodeURIComponent(
+                            cookie.substring(name.length + 1)
+                        );
+                    break;
+                    }
+                }
             }
-          }
-          return cookieValue;
+            return cookieValue;
         }
 
         var csrftoken = getCookie("csrftoken");
 
         function csrfSafeMethod(method) {
-          return /^(GET|HEAD|OPTIONS|TRACE)$/.test(method);
+            return /^(GET|HEAD|OPTIONS|TRACE)$/.test(method);
         }
 
         $.ajaxSetup({
-          beforeSend: function (xhr, settings) {
-            if (!csrfSafeMethod(settings.type) && !this.crossDomain) {
-              xhr.setRequestHeader("X-CSRFToken", csrftoken);
-            }
-          },
+            beforeSend: function (xhr, settings) {
+                if (!csrfSafeMethod(settings.type) && !this.crossDomain) {
+                    xhr.setRequestHeader("X-CSRFToken", csrftoken);
+                }
+            },
         });
 
         window.onload = function(){
@@ -117,6 +135,9 @@
                 console.log(data);
             });
         }
+
+        const loading = document.querySelector('#loading');
+        loading.classList.add('hide');
 
         var query2 = location.search;
         var value2 = query2.split('=');
@@ -165,8 +186,6 @@
         });
 
 
-
-
         function send_img_1() {
             fd.set("type", "train-1");
             fd.set("user", userName);
@@ -207,7 +226,6 @@
         }
 
 
-
         $(window).on('beforeunload', function() {
             $.ajax({
                 url: '{% url "app:get_data" %}',
@@ -220,9 +238,9 @@
         });
 
 
-
         function balance()
         {
+            loading.classList.remove('hide');
             document.getElementById("balance_button").disabled = true;
             document.getElementById("send_button").disabled = true;
             $.ajax({
@@ -232,6 +250,7 @@
                 dataType: "json",
             }).done(function (data) {
                 if (data["success"]) {
+                    loading.classList.add('hide');
                     document.getElementById("m_button").style.visibility = 'visible';
                     document.getElementById("m_button").disabled = false;
                 }
@@ -247,8 +266,6 @@
 
             location.href = "{% url 'app:diffsec' %}" + "?name=" + encodeURIComponent(temp);
         }
-
-
 
 
 
